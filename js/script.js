@@ -15,7 +15,7 @@
     const todoList = document.querySelector('.todoContentList');
     const todos = JSON.parse(localStorage.getItem('todos')) || [];
 
-    //call push todo item function for show localStorage getitem 
+    //call push todo item function for show localStorage getitem
     pushTodoItem(todos);
 
     //create todo list
@@ -43,6 +43,7 @@
 
         //clear input field when clicked add button
         input.value = '';
+        input.focus();
     }
 
     //create new todo item
@@ -78,8 +79,14 @@
         localStorage.setItem('todos', JSON.stringify(todos));
     }
 
+    function isEnterHit(e) {
+        const code = e.keyCode;
+
+        if(code === 13) createTodo();
+
+    }
 
     todoButton.addEventListener('click', createTodo, false);
     todoList.addEventListener('click', deleteTodoItem, false);
-
+    input.addEventListener('keyup', isEnterHit, false);
 }());
