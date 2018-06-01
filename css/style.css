@@ -1,129 +1,115 @@
-@import url('https://fonts.googleapis.com/css?family=Raleway:400,700');
-* {
+/* google font */
+@import url('https://fonts.googleapis.com/css?family=Raleway:400,600,700');
+
+/* reset css */
+*{
     margin: 0;
-    padding: 0;
+    outline: none;
     box-sizing: border-box;
 }
+
 body {
-    background: #f5f5f5;
-    color: #878787;
     font-family: 'Raleway', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    background-color: #f7f7f7;
 }
 
-ul {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-}
-
-.todo-wrap {
-    width: 400px;
-    margin: 15px auto;
-    background: #fff;
-    box-shadow: 0 0 10px 5px #e7e7e7;
-    padding: 30px;
-    border-radius: 3px;
-}
-
-.todoHeader {
-    margin-bottom: 15px;
-    text-align: center;
-}
-
-.todoHeader h4 {
-    font-size: 22px;
+h1, h2, h3, h4, h5, h6 {
     font-weight: 700;
+}
+
+input[type='text'] {
+    width: 100%;
+    border: 1px solid #ddd;
+    padding: 10px;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+input[type='text']:hover,
+input[type='text']:focus {
+    border-color: #3498db;
+}
+
+.wrapper {
+    width: 40%;
+    margin: 20px auto;
+    background-color: #fff;
+    box-shadow: 0 0 20px rgba(0,0,0, .2);
+    border-radius: 2px;
+    padding: 20px;
+}
+
+.todosWrap {
+    margin-top: 25px;
+}
+
+.todoTitle {
+    margin: 0 0 15px;
     text-transform: capitalize;
 }
 
-.todoList input[type=text] {
-    width: 100%;
-    height: 45px;
-    padding: 0 10px;
-    font-size: 14px;
-    border-radius: 1px;
-    border: 1px solid #ccc;
-    background: #f5f5f5;
-    color: #555;
-    outline: none;
+.todosList {
+    padding: 0;
+    list-style: none;
+    border-top: 1px solid #ddd;
 }
 
-.todoIntputField {
-    margin-bottom: 15px;
+.todosList li {
+    border-bottom: 1px solid #ddd;
+    padding: 15px;
+    letter-spacing: 1.2px;
     position: relative;
 }
 
-.todoIntputField button {
-    border: none;
-    cursor: pointer;
-    background: #6f96ff;
-    color: #fff;
-    padding: 10px;
-    font-size: 16px;
-    border-radius: 2px;
-    outline: none;
-    position: absolute;
-    right: 0;
-    top: 0;
-    height: 100%;
-}
-
-.todoContent ul li {
-    border-bottom: 1px solid #e7e7e7;
-    cursor: pointer;
-    padding: 0 15px 0 35px;
-    line-height: 45px;
-    position: relative;
-    word-break: break-all;
-}
-.todoContent ul li:last-child{
+.todosList li:last-child {
     border-bottom: 0px;
 }
-.todoContent ul li:hover {
-    background: #f5f5f5;
+
+.close-btn::before {
+    content: "x";
 }
 
-.todoContent ul li.checked {
-    background: #6f96ff;
-    text-decoration: line-through;
-    color: #fff
-}
-.todoList ul li.checked::before {
-    content: "";
+.todosList li .close-btn {
+    display: inline-block;
     position: absolute;
-    border-color: #ffff;
-    border-style: solid;
-    border-width: 0 2px 2px 0;
-    top: 42%;
-    left: 10px;
-    transform: rotate(45deg) translateY(-50%);
-    height: 15px;
-    width: 7px;
-}
-.todoContent ul li span {
-    position: absolute;
-    right: 10px;
+    right: 5px;
     top: 50%;
     transform: translateY(-50%);
-    font-size: 30px;
-    line-height: 0;
+    transition: all .4s ease 0s;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 18px;
 }
 
-.todoContent ul li span:hover {
-    color: #e74c3c;
+.todosList li .close-btn:hover {
+    color: #c0392b;
 }
 
-.todoContent ul li i {
-    position: absolute;
-    left: 10px;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 18px;
-    border: 1px solid #ddd;
-    background: transparent;
-    height: 18px;
-    display: block;
+.add-btn {
+    display: inline-block;
+    background-color: #fff;
+    color: #3498db;
+    font-size: 8px;
+    border: 0px;
+    padding: 10px 20px;
+    text-transform: uppercase;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all .4s ease 0s;
+    border-radius: 2px;
+    box-shadow: 0 0 0 2px #3498db inset;
 }
-.todoList ul li.checked i {
-    border: 1px solid #fff;
+
+.add-btn:hover {
+    color: #fff;
+    box-shadow: 0 0 0 3em #3498db inset;
+}
+
+
+@media screen and (max-width: 800px) {
+    .wrapper {
+        width: 80%;
+    }
 }

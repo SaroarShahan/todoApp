@@ -1,29 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title>To-Do List</title>
-        <link rel="stylesheet" href="css/style.css">
-    </head>
-    <body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Todo list</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
 
-        <div class="todo-wrap">
-            <div class="todoHeader">
-                <h4>Todo List</h4>
-            </div>
-            <div class="todoList">
-                <div class="todoIntputField">
-                    <input type="text" id="todoInt" placeholder="Write new item...">
-                    <button type="submit" id="todoBtn">Add</button>
-                </div>
-                <div class="todoContent">
-                    <ul class="todoContentList"></ul>
-                </div>
-            </div>
+    <div class="wrapper">
+        <form name="todoList" class="todoForm" method="post">
+            <input type="text" name="todo" class="todoField" placeholder="Add todo here...">
+            <input type="submit" value="Add todo" class="add-btn">
+        </form>
+
+        <div class="todosWrap">
+            <h3 class="todoTitle">Todo list</h3>
+            <ul class="todosList"></ul>
         </div>
+    </div>
 
-        <script src="js/script.js"></script>
-    </body>
+    <script src="js/app.js"></script>
+</body>
 </html>
